@@ -1,0 +1,772 @@
+[
+  {
+    "race": "dwarf",
+    "class": "barbarian",
+    "file": "dwarf_barbarian.webp",
+    "width": 512,
+    "height": 512,
+    "format": "webp",
+    "alpha": true,
+    "encoding": "lossless"
+  },
+  {
+    "race": "dwarf",
+    "class": "bard",
+    "file": "dwarf_bard.webp",
+    "width": 512,
+    "height": 512,
+    "format": "webp",
+    "alpha": true,
+    "encoding": "lossless"
+  },
+  {
+    "race": "dwarf",
+    "class": "cleric",
+    "file": "dwarf_cleric.webp",
+    "width": 512,
+    "height": 512,
+    "format": "webp",
+    "alpha": true,
+    "encoding": "lossless"
+  },
+  {
+    "race": "dwarf",
+    "class": "druid",
+    "file": "dwarf_druid.webp",
+    "width": 512,
+    "height": 512,
+    "format": "webp",
+    "alpha": true,
+    "encoding": "lossless"
+  },
+  {
+    "race": "dwarf",
+    "class": "fighter",
+    "file": "dwarf_fighter.webp",
+    "width": 512,
+    "height": 512,
+    "format": "webp",
+    "alpha": true,
+    "encoding": "lossless"
+  },
+  {
+    "race": "dwarf",
+    "class": "monk",
+    "file": "dwarf_monk.webp",
+    "width": 512,
+    "height": 512,
+    "format": "webp",
+    "alpha": true,
+    "encoding": "lossless"
+  },
+  {
+    "race": "dwarf",
+    "class": "paladin",
+    "file": "dwarf_paladin.webp",
+    "width": 512,
+    "height": 512,
+    "format": "webp",
+    "alpha": true,
+    "encoding": "lossless"
+  },
+  {
+    "race": "dwarf",
+    "class": "ranger",
+    "file": "dwarf_ranger.webp",
+    "width": 512,
+    "height": 512,
+    "format": "webp",
+    "alpha": true,
+    "encoding": "lossless"
+  },
+  {
+    "race": "dwarf",
+    "class": "rogue",
+    "file": "dwarf_rogue.webp",
+    "width": 512,
+    "height": 512,
+    "format": "webp",
+    "alpha": true,
+    "encoding": "lossless"
+  },
+  {
+    "race": "dwarf",
+    "class": "sorcerer",
+    "file": "dwarf_sorcerer.webp",
+    "width": 512,
+    "height": 512,
+    "format": "webp",
+    "alpha": true,
+    "encoding": "lossless"
+  },
+  {
+    "race": "dwarf",
+    "class": "wizard",
+    "file": "dwarf_wizard.webp",
+    "width": 512,
+    "height": 512,
+    "format": "webp",
+    "alpha": true,
+    "encoding": "lossless"
+  },
+  {
+    "race": "elf",
+    "class": "barbarian",
+    "file": "elf_barbarian.webp",
+    "width": 512,
+    "height": 512,
+    "format": "webp",
+    "alpha": true,
+    "encoding": "lossless"
+  },
+  {
+    "race": "elf",
+    "class": "bard",
+    "file": "elf_bard.webp",
+    "width": 512,
+    "height": 512,
+    "format": "webp",
+    "alpha": true,
+    "encoding": "lossless"
+  },
+  {
+    "race": "elf",
+    "class": "cleric",
+    "file": "elf_cleric.webp",
+    "width": 512,
+    "height": 512,
+    "format": "webp",
+    "alpha": true,
+    "encoding": "lossless"
+  },
+  {
+    "race": "elf",
+    "class": "druid",
+    "file": "elf_druid.webp",
+    "width": 512,
+    "height": 512,
+    "format": "webp",
+    "alpha": true,
+    "encoding": "lossless"
+  },
+  {
+    "race": "elf",
+    "class": "fighter",
+    "file": "elf_fighter.webp",
+    "width": 512,
+    "height": 512,
+    "format": "webp",
+    "alpha": true,
+    "encoding": "lossless"
+  },
+  {
+    "race": "elf",
+    "class": "monk",
+    "file": "elf_monk.webp",
+    "width": 512,
+    "height": 512,
+    "format": "webp",
+    "alpha": true,
+    "encoding": "lossless"
+  },
+  {
+    "race": "elf",
+    "class": "paladin",
+    "file": "elf_paladin.webp",
+    "width": 512,
+    "height": 512,
+    "format": "webp",
+    "alpha": true,
+    "encoding": "lossless"
+  },
+  {
+    "race": "elf",
+    "class": "ranger",
+    "file": "elf_ranger.webp",
+    "width": 512,
+    "height": 512,
+    "format": "webp",
+    "alpha": true,
+    "encoding": "lossless"
+  },
+  {
+    "race": "elf",
+    "class": "rogue",
+    "file": "elf_rogue.webp",
+    "width": 512,
+    "height": 512,
+    "format": "webp",
+    "alpha": true,
+    "encoding": "lossless"
+  },
+  {
+    "race": "elf",
+    "class": "sorcerer",
+    "file": "elf_sorcerer.webp",
+    "width": 512,
+    "height": 512,
+    "format": "webp",
+    "alpha": true,
+    "encoding": "lossless"
+  },
+  {
+    "race": "elf",
+    "class": "wizard",
+    "file": "elf_wizard.webp",
+    "width": 512,
+    "height": 512,
+    "format": "webp",
+    "alpha": true,
+    "encoding": "lossless"
+  },
+  {
+    "race": "gnome",
+    "class": "barbarian",
+    "file": "gnome_barbarian.webp",
+    "width": 512,
+    "height": 512,
+    "format": "webp",
+    "alpha": true,
+    "encoding": "lossless"
+  },
+  {
+    "race": "gnome",
+    "class": "bard",
+    "file": "gnome_bard.webp",
+    "width": 512,
+    "height": 512,
+    "format": "webp",
+    "alpha": true,
+    "encoding": "lossless"
+  },
+  {
+    "race": "gnome",
+    "class": "cleric",
+    "file": "gnome_cleric.webp",
+    "width": 512,
+    "height": 512,
+    "format": "webp",
+    "alpha": true,
+    "encoding": "lossless"
+  },
+  {
+    "race": "gnome",
+    "class": "druid",
+    "file": "gnome_druid.webp",
+    "width": 512,
+    "height": 512,
+    "format": "webp",
+    "alpha": true,
+    "encoding": "lossless"
+  },
+  {
+    "race": "gnome",
+    "class": "fighter",
+    "file": "gnome_fighter.webp",
+    "width": 512,
+    "height": 512,
+    "format": "webp",
+    "alpha": true,
+    "encoding": "lossless"
+  },
+  {
+    "race": "gnome",
+    "class": "monk",
+    "file": "gnome_monk.webp",
+    "width": 512,
+    "height": 512,
+    "format": "webp",
+    "alpha": true,
+    "encoding": "lossless"
+  },
+  {
+    "race": "gnome",
+    "class": "paladin",
+    "file": "gnome_paladin.webp",
+    "width": 512,
+    "height": 512,
+    "format": "webp",
+    "alpha": true,
+    "encoding": "lossless"
+  },
+  {
+    "race": "gnome",
+    "class": "ranger",
+    "file": "gnome_ranger.webp",
+    "width": 512,
+    "height": 512,
+    "format": "webp",
+    "alpha": true,
+    "encoding": "lossless"
+  },
+  {
+    "race": "gnome",
+    "class": "rogue",
+    "file": "gnome_rogue.webp",
+    "width": 512,
+    "height": 512,
+    "format": "webp",
+    "alpha": true,
+    "encoding": "lossless"
+  },
+  {
+    "race": "gnome",
+    "class": "sorcerer",
+    "file": "gnome_sorcerer.webp",
+    "width": 512,
+    "height": 512,
+    "format": "webp",
+    "alpha": true,
+    "encoding": "lossless"
+  },
+  {
+    "race": "gnome",
+    "class": "wizard",
+    "file": "gnome_wizard.webp",
+    "width": 512,
+    "height": 512,
+    "format": "webp",
+    "alpha": true,
+    "encoding": "lossless"
+  },
+  {
+    "race": "half-elf",
+    "class": "barbarian",
+    "file": "half-elf_barbarian.webp",
+    "width": 512,
+    "height": 512,
+    "format": "webp",
+    "alpha": true,
+    "encoding": "lossless"
+  },
+  {
+    "race": "half-elf",
+    "class": "bard",
+    "file": "half-elf_bard.webp",
+    "width": 512,
+    "height": 512,
+    "format": "webp",
+    "alpha": true,
+    "encoding": "lossless"
+  },
+  {
+    "race": "half-elf",
+    "class": "cleric",
+    "file": "half-elf_cleric.webp",
+    "width": 512,
+    "height": 512,
+    "format": "webp",
+    "alpha": true,
+    "encoding": "lossless"
+  },
+  {
+    "race": "half-elf",
+    "class": "druid",
+    "file": "half-elf_druid.webp",
+    "width": 512,
+    "height": 512,
+    "format": "webp",
+    "alpha": true,
+    "encoding": "lossless"
+  },
+  {
+    "race": "half-elf",
+    "class": "fighter",
+    "file": "half-elf_fighter.webp",
+    "width": 512,
+    "height": 512,
+    "format": "webp",
+    "alpha": true,
+    "encoding": "lossless"
+  },
+  {
+    "race": "half-elf",
+    "class": "monk",
+    "file": "half-elf_monk.webp",
+    "width": 512,
+    "height": 512,
+    "format": "webp",
+    "alpha": true,
+    "encoding": "lossless"
+  },
+  {
+    "race": "half-elf",
+    "class": "paladin",
+    "file": "half-elf_paladin.webp",
+    "width": 512,
+    "height": 512,
+    "format": "webp",
+    "alpha": true,
+    "encoding": "lossless"
+  },
+  {
+    "race": "half-elf",
+    "class": "ranger",
+    "file": "half-elf_ranger.webp",
+    "width": 512,
+    "height": 512,
+    "format": "webp",
+    "alpha": true,
+    "encoding": "lossless"
+  },
+  {
+    "race": "half-elf",
+    "class": "rogue",
+    "file": "half-elf_rogue.webp",
+    "width": 512,
+    "height": 512,
+    "format": "webp",
+    "alpha": true,
+    "encoding": "lossless"
+  },
+  {
+    "race": "half-elf",
+    "class": "sorcerer",
+    "file": "half-elf_sorcerer.webp",
+    "width": 512,
+    "height": 512,
+    "format": "webp",
+    "alpha": true,
+    "encoding": "lossless"
+  },
+  {
+    "race": "half-elf",
+    "class": "wizard",
+    "file": "half-elf_wizard.webp",
+    "width": 512,
+    "height": 512,
+    "format": "webp",
+    "alpha": true,
+    "encoding": "lossless"
+  },
+  {
+    "race": "half-orc",
+    "class": "barbarian",
+    "file": "half-orc_barbarian.webp",
+    "width": 512,
+    "height": 512,
+    "format": "webp",
+    "alpha": true,
+    "encoding": "lossless"
+  },
+  {
+    "race": "half-orc",
+    "class": "bard",
+    "file": "half-orc_bard.webp",
+    "width": 512,
+    "height": 512,
+    "format": "webp",
+    "alpha": true,
+    "encoding": "lossless"
+  },
+  {
+    "race": "half-orc",
+    "class": "cleric",
+    "file": "half-orc_cleric.webp",
+    "width": 512,
+    "height": 512,
+    "format": "webp",
+    "alpha": true,
+    "encoding": "lossless"
+  },
+  {
+    "race": "half-orc",
+    "class": "druid",
+    "file": "half-orc_druid.webp",
+    "width": 512,
+    "height": 512,
+    "format": "webp",
+    "alpha": true,
+    "encoding": "lossless"
+  },
+  {
+    "race": "half-orc",
+    "class": "fighter",
+    "file": "half-orc_fighter.webp",
+    "width": 512,
+    "height": 512,
+    "format": "webp",
+    "alpha": true,
+    "encoding": "lossless"
+  },
+  {
+    "race": "half-orc",
+    "class": "monk",
+    "file": "half-orc_monk.webp",
+    "width": 512,
+    "height": 512,
+    "format": "webp",
+    "alpha": true,
+    "encoding": "lossless"
+  },
+  {
+    "race": "half-orc",
+    "class": "paladin",
+    "file": "half-orc_paladin.webp",
+    "width": 512,
+    "height": 512,
+    "format": "webp",
+    "alpha": true,
+    "encoding": "lossless"
+  },
+  {
+    "race": "half-orc",
+    "class": "ranger",
+    "file": "half-orc_ranger.webp",
+    "width": 512,
+    "height": 512,
+    "format": "webp",
+    "alpha": true,
+    "encoding": "lossless"
+  },
+  {
+    "race": "half-orc",
+    "class": "rogue",
+    "file": "half-orc_rogue.webp",
+    "width": 512,
+    "height": 512,
+    "format": "webp",
+    "alpha": true,
+    "encoding": "lossless"
+  },
+  {
+    "race": "half-orc",
+    "class": "sorcerer",
+    "file": "half-orc_sorcerer.webp",
+    "width": 512,
+    "height": 512,
+    "format": "webp",
+    "alpha": true,
+    "encoding": "lossless"
+  },
+  {
+    "race": "half-orc",
+    "class": "wizard",
+    "file": "half-orc_wizard.webp",
+    "width": 512,
+    "height": 512,
+    "format": "webp",
+    "alpha": true,
+    "encoding": "lossless"
+  },
+  {
+    "race": "halfling",
+    "class": "barbarian",
+    "file": "halfling_barbarian.webp",
+    "width": 512,
+    "height": 512,
+    "format": "webp",
+    "alpha": true,
+    "encoding": "lossless"
+  },
+  {
+    "race": "halfling",
+    "class": "bard",
+    "file": "halfling_bard.webp",
+    "width": 512,
+    "height": 512,
+    "format": "webp",
+    "alpha": true,
+    "encoding": "lossless"
+  },
+  {
+    "race": "halfling",
+    "class": "cleric",
+    "file": "halfling_cleric.webp",
+    "width": 512,
+    "height": 512,
+    "format": "webp",
+    "alpha": true,
+    "encoding": "lossless"
+  },
+  {
+    "race": "halfling",
+    "class": "druid",
+    "file": "halfling_druid.webp",
+    "width": 512,
+    "height": 512,
+    "format": "webp",
+    "alpha": true,
+    "encoding": "lossless"
+  },
+  {
+    "race": "halfling",
+    "class": "fighter",
+    "file": "halfling_fighter.webp",
+    "width": 512,
+    "height": 512,
+    "format": "webp",
+    "alpha": true,
+    "encoding": "lossless"
+  },
+  {
+    "race": "halfling",
+    "class": "monk",
+    "file": "halfling_monk.webp",
+    "width": 512,
+    "height": 512,
+    "format": "webp",
+    "alpha": true,
+    "encoding": "lossless"
+  },
+  {
+    "race": "halfling",
+    "class": "paladin",
+    "file": "halfling_paladin.webp",
+    "width": 512,
+    "height": 512,
+    "format": "webp",
+    "alpha": true,
+    "encoding": "lossless"
+  },
+  {
+    "race": "halfling",
+    "class": "ranger",
+    "file": "halfling_ranger.webp",
+    "width": 512,
+    "height": 512,
+    "format": "webp",
+    "alpha": true,
+    "encoding": "lossless"
+  },
+  {
+    "race": "halfling",
+    "class": "rogue",
+    "file": "halfling_rogue.webp",
+    "width": 512,
+    "height": 512,
+    "format": "webp",
+    "alpha": true,
+    "encoding": "lossless"
+  },
+  {
+    "race": "halfling",
+    "class": "sorcerer",
+    "file": "halfling_sorcerer.webp",
+    "width": 512,
+    "height": 512,
+    "format": "webp",
+    "alpha": true,
+    "encoding": "lossless"
+  },
+  {
+    "race": "halfling",
+    "class": "wizard",
+    "file": "halfling_wizard.webp",
+    "width": 512,
+    "height": 512,
+    "format": "webp",
+    "alpha": true,
+    "encoding": "lossless"
+  },
+  {
+    "race": "human",
+    "class": "barbarian",
+    "file": "human_barbarian.webp",
+    "width": 512,
+    "height": 512,
+    "format": "webp",
+    "alpha": true,
+    "encoding": "lossless"
+  },
+  {
+    "race": "human",
+    "class": "bard",
+    "file": "human_bard.webp",
+    "width": 512,
+    "height": 512,
+    "format": "webp",
+    "alpha": true,
+    "encoding": "lossless"
+  },
+  {
+    "race": "human",
+    "class": "cleric",
+    "file": "human_cleric.webp",
+    "width": 512,
+    "height": 512,
+    "format": "webp",
+    "alpha": true,
+    "encoding": "lossless"
+  },
+  {
+    "race": "human",
+    "class": "druid",
+    "file": "human_druid.webp",
+    "width": 512,
+    "height": 512,
+    "format": "webp",
+    "alpha": true,
+    "encoding": "lossless"
+  },
+  {
+    "race": "human",
+    "class": "fighter",
+    "file": "human_fighter.webp",
+    "width": 512,
+    "height": 512,
+    "format": "webp",
+    "alpha": true,
+    "encoding": "lossless"
+  },
+  {
+    "race": "human",
+    "class": "monk",
+    "file": "human_monk.webp",
+    "width": 512,
+    "height": 512,
+    "format": "webp",
+    "alpha": true,
+    "encoding": "lossless"
+  },
+  {
+    "race": "human",
+    "class": "paladin",
+    "file": "human_paladin.webp",
+    "width": 512,
+    "height": 512,
+    "format": "webp",
+    "alpha": true,
+    "encoding": "lossless"
+  },
+  {
+    "race": "human",
+    "class": "ranger",
+    "file": "human_ranger.webp",
+    "width": 512,
+    "height": 512,
+    "format": "webp",
+    "alpha": true,
+    "encoding": "lossless"
+  },
+  {
+    "race": "human",
+    "class": "rogue",
+    "file": "human_rogue.webp",
+    "width": 512,
+    "height": 512,
+    "format": "webp",
+    "alpha": true,
+    "encoding": "lossless"
+  },
+  {
+    "race": "human",
+    "class": "sorcerer",
+    "file": "human_sorcerer.webp",
+    "width": 512,
+    "height": 512,
+    "format": "webp",
+    "alpha": true,
+    "encoding": "lossless"
+  },
+  {
+    "race": "human",
+    "class": "wizard",
+    "file": "human_wizard.webp",
+    "width": 512,
+    "height": 512,
+    "format": "webp",
+    "alpha": true,
+    "encoding": "lossless"
+  }
+]
