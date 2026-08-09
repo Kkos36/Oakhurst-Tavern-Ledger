@@ -175,24 +175,27 @@
 
   .chips { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
   .chip-wrap { position: relative; display: inline-flex; align-items: center; }
+  /* Chips sit directly on the fixed parchment photo (leaf--player), so their colors
+     are hardcoded ink-on-parchment tones rather than theme variables — the theme
+     variables flip for dark mode, but the photo behind them never does. */
   .chip {
-    font-family: var(--font-body); font-size: 14.5px; padding: 7px 15px; background: rgba(226,230,216,0.9);
-    border: 1px solid var(--line); border-radius: 999px; color: var(--ink); cursor: pointer;
+    font-family: var(--font-body); font-size: 14.5px; padding: 7px 15px; background: rgba(226,230,216,0.92);
+    border: 1px solid rgba(44,32,19,0.28); border-radius: 999px; color: #2c2013; cursor: pointer;
     transition: background 0.12s, border-color 0.12s, transform 0.08s;
   }
-  :root[data-theme="dark"] .chip, @media (prefers-color-scheme: dark) { }
   .chip:hover { border-color: var(--accent); }
   .chip:active { transform: translateY(1px); }
   .chip-remove {
-    margin-left: -8px; width: 20px; height: 20px; border-radius: 50%; border: 1px solid var(--line);
-    background: var(--surface); color: var(--ink-soft); font-size: 12px; line-height: 1; cursor: pointer;
+    margin-left: -8px; width: 20px; height: 20px; border-radius: 50%; border: 1px solid rgba(44,32,19,0.28);
+    background: rgba(226,230,216,0.95); color: #6b5a3f; font-size: 12px; line-height: 1; cursor: pointer;
     display: flex; align-items: center; justify-content: center; padding: 0;
   }
   .chip-remove:hover { color: var(--danger); border-color: var(--danger); }
 
   .chip-add-form { display: inline-flex; gap: 6px; align-items: center; margin-top: 10px; justify-content: center; width: 100%; }
-  .chip-add-input { font-family: var(--font-body); font-size: 14px; padding: 6px 12px; border-radius: 999px; border: 1px dashed var(--line); background: rgba(255,255,255,0.15); color: var(--ink); width: 150px; }
-  .chip-add-btn { font-family: var(--font-body); font-size: 13px; padding: 6px 12px; border-radius: 999px; border: 1px solid var(--line); background: transparent; color: var(--ink-soft); cursor: pointer; }
+  .chip-add-input { font-family: var(--font-body); font-size: 14px; padding: 6px 12px; border-radius: 999px; border: 1px dashed rgba(44,32,19,0.4); background: rgba(255,255,255,0.35); color: #2c2013; width: 150px; }
+  .chip-add-input::placeholder { color: rgba(44,32,19,0.55); }
+  .chip-add-btn { font-family: var(--font-body); font-size: 13px; padding: 6px 12px; border-radius: 999px; border: 1px solid rgba(44,32,19,0.28); background: transparent; color: #4a3d28; cursor: pointer; }
   .chip-add-btn:hover { color: var(--ink); border-color: var(--accent); }
 
   .screen-actions { margin-top: 26px; display: flex; justify-content: center; }
@@ -216,69 +219,65 @@
   .gen-page {
     position: relative; width: 100%; max-width: 880px; margin: 0 auto;
     aspect-ratio: 1672 / 941;
-    background-image: url("docs/AI_Artwork/CharacterGeneratorPage.png");
+    background-image: url("docs/AI_Artwork/CharacterGeneratorHeadon.png");
     background-size: 100% 100%; background-repeat: no-repeat;
     border-radius: 4px; box-shadow: 0 16px 40px rgba(6,3,1,0.4);
   }
-  .gen-field { position: absolute; box-sizing: border-box; }
-  .gen-field.write-in { opacity: 0; animation: write-in 0.5s ease forwards; }
+  .gen-field { position: absolute; box-sizing: border-box; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+  .write-in { opacity: 0; animation: write-in 0.5s ease forwards; }
 
-  .gen-name {
-    left: 20%; top: 52%; width: 24%; height: 9%;
-    font-family: var(--font-display); font-style: italic; font-size: clamp(10px, 1.55vw, 17px);
-    background: transparent; border: none; color: #2c2013; text-align: center; padding: 0;
+  .gen-label {
+    font-family: var(--font-body); font-size: clamp(8px, 1vw, 11px); letter-spacing: 0.1em; text-transform: uppercase;
+    color: rgba(44,32,19,0.55); margin-bottom: 2px;
   }
-  .gen-name::placeholder { color: rgba(44,32,19,0.4); }
-  .gen-name:focus { outline: none; background: rgba(255,255,255,0.25); }
+  .gen-value {
+    font-family: var(--font-mono); font-weight: 700; color: #2c2013; font-variant-numeric: tabular-nums;
+    font-size: clamp(13px, 2vw, 22px);
+  }
+  .gen-sublabel { font-family: var(--font-mono); font-size: clamp(8px, 0.9vw, 10px); color: rgba(44,32,19,0.55); margin-top: 1px; }
 
+  /* Left page: big roll area + name box (measured against docs/AI_Artwork/CharacterGeneratorHeadon.png) */
   .gen-roll {
-    left: 17%; top: 68%; width: 32%; height: 30%;
+    left: 13.6%; top: 3.7%; width: 34%; height: 36.5%;
     background: transparent; border: none; cursor: pointer; border-radius: 4%;
     transition: filter 0.15s ease, background 0.15s ease;
   }
   .gen-roll:hover, .gen-roll:focus-visible { background: rgba(255, 214, 140, 0.12); filter: brightness(1.1); }
+  .gen-roll-hint {
+    font-family: var(--font-display); font-style: italic; color: rgba(44,32,19,0.45);
+    font-size: clamp(12px, 1.7vw, 18px);
+  }
 
+  .gen-name-box { left: 15.9%; top: 58.2%; width: 29.3%; height: 10.2%; }
+  .gen-name-input {
+    font-family: var(--font-display); font-style: italic; font-size: clamp(11px, 1.6vw, 18px);
+    background: transparent; border: none; color: #2c2013; text-align: center; padding: 0; width: 95%;
+  }
+  .gen-name-input::placeholder { color: rgba(44,32,19,0.35); }
+  .gen-name-input:focus { outline: none; }
+
+  /* Right page */
   .gen-portrait {
-    left: 50.7%; top: 6%; width: 20.2%; height: 36%;
+    left: 52%; top: 5.1%; width: 21%; height: 34.5%;
     overflow: hidden; border-radius: 2px; opacity: 0; transition: opacity 0.7s ease;
   }
   .gen-portrait.show { opacity: 1; }
   .gen-portrait img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
-  .gen-race, .gen-class {
-    left: 71.4%; width: 18.4%;
-    font-family: var(--font-display); font-style: italic; color: #2c2013;
-    font-size: clamp(11px, 1.5vw, 16px); text-align: center; display: flex; align-items: center; justify-content: center;
-  }
-  .gen-race { top: 9.4%; height: 4%; }
-  .gen-class { top: 17.8%; height: 4%; }
-  select.gen-choice { font: inherit; width: 92%; background: rgba(255,255,255,0.55); border: 1px solid rgba(44,32,19,0.3); border-radius: 2px; color: #2c2013; }
+  .gen-hp-box { left: 74.4%; top: 26.6%; width: 12.3%; height: 13%; }
 
-  .gen-stat {
-    top: 46%; width: 6.8%; height: 7%;
-    display: flex; align-items: center; justify-content: center;
-    font-family: var(--font-mono); font-weight: 700; color: #2c2013; font-size: clamp(13px, 1.9vw, 19px);
-    font-variant-numeric: tabular-nums;
-  }
-  .gen-str { left: 50.7% } .gen-dex { left: 57.3% } .gen-con { left: 63.8% }
-  .gen-int { left: 70.3% } .gen-wis { left: 76.8% } .gen-cha { left: 83.3% }
+  .gen-race-box { left: 52%; top: 42%; width: 17.5%; height: 10.3%; }
+  .gen-class-box { left: 69.5%; top: 42%; width: 17.5%; height: 10.3%; }
+  select.gen-choice { font: inherit; width: 92%; background: rgba(255,255,255,0.55); border: 1px solid rgba(44,32,19,0.3); border-radius: 2px; color: #2c2013; text-align: center; }
 
-  .gen-reroll, .gen-accept, .gen-export {
-    top: 78.4%; height: 17%; background: transparent; border: none; cursor: pointer; border-radius: 4%;
-    transition: background 0.15s ease;
-  }
-  .gen-reroll:hover, .gen-accept:hover, .gen-export:hover { background: rgba(255, 214, 140, 0.12); }
-  .gen-reroll { left: 50.7%; width: 15.6% }
-  .gen-accept { left: 67%; width: 15.3% }
-  .gen-export { left: 83%; width: 15.6% }
+  .gen-stat { top: 55.8%; width: 10.97%; height: 19.5%; }
+  .gen-stat--sm { top: 77.7%; height: 9.4%; }
+  .gen-str { left: 52% } .gen-dex { left: 64.3% } .gen-con { left: 76.2% }
+  .gen-int { left: 52% } .gen-wis { left: 64.3% } .gen-cha { left: 76.2% }
 
   .gen-footer { max-width: 620px; margin: 20px auto 0; text-align: center; }
   .roll-log { font-family: var(--font-mono); font-size: 12px; color: var(--ink-soft); margin: 8px 0 0; }
 
-  .name-input {
-    font-family: var(--font-display); font-size: 17px; padding: 9px 13px; border-radius: 3px; border: 1px solid var(--line);
-    background: rgba(255,255,255,0.2); color: var(--ink); width: 100%; max-width: 320px;
-  }
   .export-row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: center; margin-top: 12px; }
   .export-note { margin: 12px 0 0; font-size: 12.5px; color: var(--ink-soft); max-width: 480px; margin-left: auto; margin-right: auto; }
   .status-line { margin: 8px 0 0; font-size: 13px; min-height: 1.4em; }
@@ -288,9 +287,13 @@
   .unlock-summary { margin: 6px 0 0; font-size: 13px; color: var(--ink-soft); text-align: center; }
   .unlock-summary .badge { display: inline-block; font-family: var(--font-mono); font-size: 11px; padding: 2px 8px; border-radius: 999px; background: var(--success); color: var(--accent-ink); margin: 0 3px 4px; font-weight: 600; }
 
+  /* leaf--player sits on the fixed parchment photo — same hardcoded-ink reasoning as chips */
+  .leaf--player .eyebrow, .leaf--player .title { color: #2c2013; }
+  .leaf--player .unlock-summary { color: #4a3d28; }
+
   @media (max-width: 560px) {
-    .gen-name, .gen-race, .gen-class { font-size: 10px; }
-    .gen-stat { font-size: 12px; }
+    .gen-label { font-size: 7px; }
+    .gen-value { font-size: 11px; }
   }
 
   .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
@@ -302,9 +305,9 @@
     <img class="landing-img" id="landingImg" src="docs/AI_Artwork/LandingPage.png" alt="The Oakhurst tavern: a bartender behind the counter and an open book on the bar" />
     <svg class="hotspots" viewBox="0 0 1536 1024" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
       <polygon id="hotspotBartender" class="hotspot" role="button" tabindex="0" aria-label="Ask the bartender about the rules"
-        points="707,92 630,102 584,205 568,328 592,410 553,492 568,594 630,655 922,655 968,573 953,471 976,389 953,246 891,113 799,82"></polygon>
+        points="742,93 661,100 613,200 598,316 597,432 609,538 637,643 911,643 900,538 921,432 908,316 872,200 819,100"></polygon>
       <polygon id="hotspotBook" class="hotspot" role="button" tabindex="0" aria-label="Open the ledger to roll a character"
-        points="261,676 461,655 737,645 1044,666 1137,717 1106,901 1075,1024 461,1024 292,922 246,758"></polygon>
+        points="411,662 548,648 742,640 979,653 1084,689 1074,863 1042,940 442,940 369,875 347,717"></polygon>
     </svg>
     <div class="hotspot-label" id="hotspotLabel"></div>
     <p class="landing-caption">Ask the barkeep about the rules, or open the ledger to roll up an adventurer.</p>
@@ -339,23 +342,38 @@
       <div class="leaf leaf--generate" id="leafGenerate">
         <div class="leaf-inner leaf-inner--generate">
           <div class="gen-page" id="genPage">
-            <input class="gen-field gen-name" id="nameInput" type="text" placeholder="Adventurer name" maxlength="60" />
-            <button class="gen-field gen-roll" id="rollBtn" type="button" aria-label="Fate's Hand — click to generate your legend"></button>
+            <button class="gen-field gen-roll" id="rollBtn" type="button" aria-label="Click to roll your fate">
+              <span class="gen-roll-hint">✦ Click to roll your fate ✦</span>
+            </button>
+
+            <div class="gen-field gen-name-box">
+              <span class="gen-label">Adventurer Name</span>
+              <input class="gen-value gen-name-input" id="nameInput" type="text" placeholder="&hellip;" maxlength="60" />
+            </div>
 
             <div class="gen-field gen-portrait" id="portraitFrame"><img id="portraitImg" alt="" /></div>
-            <div class="gen-field gen-race" id="raceField">&nbsp;</div>
-            <div class="gen-field gen-class" id="classField">&nbsp;</div>
 
-            <div class="gen-field gen-stat gen-str" id="statStr"></div>
-            <div class="gen-field gen-stat gen-dex" id="statDex"></div>
-            <div class="gen-field gen-stat gen-con" id="statCon"></div>
-            <div class="gen-field gen-stat gen-int" id="statInt"></div>
-            <div class="gen-field gen-stat gen-wis" id="statWis"></div>
-            <div class="gen-field gen-stat gen-cha" id="statCha"></div>
+            <div class="gen-field gen-hp-box">
+              <span class="gen-label">HP</span>
+              <span class="gen-value" id="hpField"></span>
+              <span class="gen-sublabel" id="hdField"></span>
+            </div>
 
-            <button class="gen-field gen-reroll" id="rerollBtn" type="button" aria-label="Reroll"></button>
-            <button class="gen-field gen-accept" id="acceptBtn" type="button" aria-label="Accept adventurer"></button>
-            <button class="gen-field gen-export" id="exportBtn" type="button" aria-label="Export"></button>
+            <div class="gen-field gen-race-box">
+              <span class="gen-label">Race</span>
+              <span class="gen-value" id="raceField"></span>
+            </div>
+            <div class="gen-field gen-class-box">
+              <span class="gen-label">Class</span>
+              <span class="gen-value" id="classField"></span>
+            </div>
+
+            <div class="gen-field gen-stat gen-str"><span class="gen-label">Str</span><span class="gen-value" id="statStr"></span></div>
+            <div class="gen-field gen-stat gen-dex"><span class="gen-label">Dex</span><span class="gen-value" id="statDex"></span></div>
+            <div class="gen-field gen-stat gen-con"><span class="gen-label">Con</span><span class="gen-value" id="statCon"></span></div>
+            <div class="gen-field gen-stat gen-stat--sm gen-int"><span class="gen-label">Int</span><span class="gen-value" id="statInt"></span></div>
+            <div class="gen-field gen-stat gen-stat--sm gen-wis"><span class="gen-label">Wis</span><span class="gen-value" id="statWis"></span></div>
+            <div class="gen-field gen-stat gen-stat--sm gen-cha"><span class="gen-label">Cha</span><span class="gen-value" id="statCha"></span></div>
           </div>
 
           <div class="gen-footer">
@@ -363,9 +381,11 @@
             <div class="unlock-summary" id="unlockSummaryGen"></div>
             <p class="roll-log" id="rollLog"></p>
             <div class="export-row">
+              <button class="btn-primary" id="rerollBtn" type="button">Reroll</button>
+              <button class="btn-primary" id="exportBtn" type="button">Export to Fantasy Grounds</button>
               <button class="btn-secondary" id="copyBtn" type="button">Copy XML instead</button>
             </div>
-            <p class="export-note">Click the dice to roll, then <strong>Export</strong> on the page to save a real <code>.xml</code> ready for Fantasy Grounds.</p>
+            <p class="export-note">Saves a real <code>.xml</code> file, ready to import into Fantasy Grounds.</p>
             <p class="status-line" id="statusLine"></p>
           </div>
         </div>
@@ -384,6 +404,26 @@
 
   var CLASS_TABLE = { 1: "Barbarian", 2: "Bard", 3: "Cleric", 4: "Druid", 5: "Fighter", 6: "Monk", 7: "Paladin", 8: "Ranger", 9: "Rogue", 10: "Sorcerer", 11: "Wizard" };
   var BASE_CLASSES = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map(function (k) { return CLASS_TABLE[k]; });
+
+  // 3.5e SRD hit die by class, for HP/HD generation
+  var HIT_DICE = {
+    Barbarian: 12, Bard: 6, Cleric: 8, Druid: 8, Fighter: 10, Monk: 8,
+    Paladin: 10, Ranger: 8, Rogue: 6, Sorcerer: 4, Wizard: 4
+  };
+
+  function abilityMod(score) { return Math.floor((score - 10) / 2); }
+
+  // Level 1 takes max hit die + Con mod; each level after that takes the average
+  // (die/2 rounded up + 1) + Con mod, per the standard 3.5e "take average" rule.
+  function computeHP(cls, level, conScore) {
+    var die = HIT_DICE[cls] || 8;
+    var mod = abilityMod(conScore);
+    var hp = die + mod;
+    for (var lvl = 2; lvl <= level; lvl++) {
+      hp += Math.floor(die / 2) + 1 + mod;
+    }
+    return Math.max(1, hp);
+  }
 
   var DEFAULT_PLAYERS = ["Kraig", "JJ", "Shayne", "Jeremy", "Christian", "Kirk", "Aiden", "Pepe"];
 
@@ -631,6 +671,8 @@
     int: document.getElementById("statInt"), wis: document.getElementById("statWis"), cha: document.getElementById("statCha")
   };
   var rollLogEl = document.getElementById("rollLog");
+  var hpField = document.getElementById("hpField");
+  var hdField = document.getElementById("hdField");
   var exportBtn = document.getElementById("exportBtn");
   var copyBtn = document.getElementById("copyBtn");
 
@@ -644,6 +686,8 @@
     STAT_KEYS.forEach(function (k) { statFields[k].textContent = ""; });
     raceField.innerHTML = "&nbsp;";
     classField.innerHTML = "&nbsp;";
+    hpField.textContent = "";
+    hdField.textContent = "";
     rollLogEl.textContent = "";
     portraitFrame.classList.remove("show");
     portraitImg.removeAttribute("src");
@@ -706,6 +750,16 @@
     window.setTimeout(function () { portraitFrame.classList.add("show"); }, 700);
   }
 
+  function updateHP() {
+    if (!currentCharacter || !currentCharacter.class) return;
+    var die = HIT_DICE[currentCharacter.class] || 8;
+    currentCharacter.hp = computeHP(currentCharacter.class, currentCharacter.level, currentCharacter.con);
+    hpField.textContent = currentCharacter.hp;
+    hdField.textContent = currentCharacter.level + "d" + die;
+    writeIn(hpField, 900);
+    writeIn(hdField, 950);
+  }
+
   function rollCharacter() {
     if (!currentPlayer) return;
     resetGenerator();
@@ -729,7 +783,7 @@
     var classRoll = rollDie(12);
     var classEntry = (classRoll === 12) ? null : CLASS_TABLE[classRoll];
     buildChoiceField(classField, 800, "1d12", classRoll, classEntry, BASE_CLASSES, p.guaranteedClasses, p.unlockedClasses, "Class", function (val) {
-      currentCharacter.class = val; updatePortrait();
+      currentCharacter.class = val; updatePortrait(); updateHP();
     });
 
     if (p.startingLevel > 1 || p.bonusXP > 0) {
@@ -741,13 +795,6 @@
 
   document.getElementById("rollBtn").addEventListener("click", rollCharacter);
   document.getElementById("rerollBtn").addEventListener("click", rollCharacter);
-  document.getElementById("acceptBtn").addEventListener("click", function () {
-    if (!currentCharacter || !currentCharacter.race || !currentCharacter.class) {
-      setStatus("Roll a character first.", "err");
-      return;
-    }
-    setStatus((currentCharacter.name || "Your adventurer") + "'s legend begins.", "ok");
-  });
   nameInput.addEventListener("input", function () { if (currentCharacter) currentCharacter.name = nameInput.value.trim(); });
 
   // ---- Fantasy Grounds XML export -----------------------------------------
@@ -765,6 +812,10 @@
       '    <race type="string">' + xmlEscape(ch.race) + '</race>',
       '    <level type="number">' + ch.level + '</level>',
       '    <exp type="number">' + ch.xp + '</exp>',
+      '    <hp>',
+      '      <total type="number">' + ch.hp + '</total>',
+      '      <wounds type="number">0</wounds>',
+      '    </hp>',
       '    <classes>',
       '      <id-00001>',
       '        <name type="string">' + xmlEscape(ch.class) + '</name>',
