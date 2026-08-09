@@ -24,7 +24,7 @@
   --ink-fixed-soft: rgba(44, 32, 19, 0.6);
 
   --font-display: Georgia, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", serif;
-  --font-script: "Dancing Script", "Segoe Script", var(--font-display);
+  --font-script: "MedievalSharp", "Segoe Script", var(--font-display);
   --font-body: -apple-system, "Segoe UI", system-ui, "Helvetica Neue", sans-serif;
   --font-mono: ui-monospace, "Cascadia Mono", "SFMono-Regular", Consolas, "Liberation Mono", monospace;
 }
@@ -197,23 +197,27 @@ button:focus-visible, input:focus-visible, select:focus-visible, a:focus-visible
    the parchment photo never flips for dark mode, so text sitting on it can't
    use theme variables that do) ---------- */
 .spread-eyebrow {
-  font-family: var(--font-body); font-size: clamp(9px, 1.1vw, 12px); letter-spacing: 0.16em; text-transform: uppercase;
+  font-family: var(--font-body); font-weight: 600; font-size: clamp(9px, 1.1vw, 12px); letter-spacing: 0.16em; text-transform: uppercase;
   color: var(--ink-fixed-soft); text-align: center; margin: 0 0 4px;
 }
 .spread-title {
   font-family: var(--font-script); font-weight: 700; font-size: clamp(26px, 4.4vw, 44px);
-  color: var(--ink-fixed); text-align: center; margin: 0; text-wrap: balance;
+  color: var(--ink-fixed); text-align: center; margin: 0; text-wrap: balance; -webkit-text-stroke: 0.4px currentColor;
 }
 
 /* ---------- Spread: player selection (both pages) ---------- */
 /* The heading and add-player form both straddle the book's darker center
-   gutter, where plain ink text loses contrast — each gets a soft banner
-   fill (faded at the edges) behind it to read cleanly regardless of what's
-   under it. */
+   gutter, where plain ink text loses contrast. Each gets a banner fill —
+   solid enough in the middle that the book underneath can't affect
+   readability at all, only fading out right at the very edges — with text
+   recolored light since the banner is now dark enough that dark ink text
+   would lose contrast against it. */
 .spread--player .spread-heading {
   position: absolute; left: 12%; top: 3.2%; width: 76%; padding: 10px 0 8px;
-  background: linear-gradient(90deg, transparent, rgba(122, 27, 27, 0.28) 18%, rgba(122, 27, 27, 0.28) 82%, transparent);
+  background: linear-gradient(90deg, transparent, rgba(94, 17, 17, 0.92) 6%, rgba(94, 17, 17, 0.92) 94%, transparent);
 }
+.spread--player .spread-heading .spread-eyebrow { color: rgba(246, 233, 201, 0.85); }
+.spread--player .spread-heading .spread-title { color: #f6ecd6; }
 
 .ledger-list {
   position: absolute; left: 15%; top: 17%; width: 70%; height: 62%;
@@ -229,10 +233,10 @@ button:focus-visible, input:focus-visible, select:focus-visible, a:focus-visible
 }
 .ledger-entry-name {
   font-family: var(--font-script); font-weight: 700; font-size: clamp(17px, 2.3vw, 25px); color: var(--ink-fixed);
-  line-height: 1.15;
+  line-height: 1.15; -webkit-text-stroke: 0.3px currentColor;
 }
 .ledger-entry-hint {
-  font-family: var(--font-display); font-style: italic; font-size: clamp(10px, 1.1vw, 12.5px); color: var(--ink-fixed-soft);
+  font-family: var(--font-display); font-style: italic; font-weight: 600; font-size: clamp(10px, 1.1vw, 12.5px); color: var(--ink-fixed-soft);
 }
 .ledger-entry-btn:hover .ledger-entry-name, .ledger-entry-btn:focus-visible .ledger-entry-name {
   text-decoration: underline; text-decoration-color: rgba(44,32,19,0.4); text-underline-offset: 3px;
@@ -247,25 +251,25 @@ button:focus-visible, input:focus-visible, select:focus-visible, a:focus-visible
 .ledger-add-form {
   position: absolute; left: 15%; top: 80.5%; width: 70%; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;
   align-items: center; padding: 14px 0;
-  background: linear-gradient(90deg, transparent, rgba(44, 32, 19, 0.22) 18%, rgba(44, 32, 19, 0.22) 82%, transparent);
+  background: linear-gradient(90deg, transparent, rgba(35, 25, 15, 0.9) 6%, rgba(35, 25, 15, 0.9) 94%, transparent);
 }
 .ledger-add-input {
   font-family: var(--font-script); font-size: clamp(15px,1.8vw,19px); padding: 6px 14px; border-radius: 3px;
-  background: rgba(255,255,255,0.3); color: var(--ink-fixed); width: 220px; max-width: 60%; border: none;
+  background: rgba(255,255,255,0.15); color: #f6ecd6; width: 220px; max-width: 60%; border: none;
 }
-.ledger-add-input::placeholder { color: rgba(44,32,19,0.45); }
+.ledger-add-input::placeholder { color: rgba(246,233,201,0.5); }
 .ledger-add-btn {
-  font-family: var(--font-body); font-size: 13px; padding: 8px 16px;
-  background: rgba(255,255,255,0.2); color: var(--ink-fixed); cursor: pointer; border: none;
+  font-family: var(--font-body); font-weight: 600; font-size: 13px; padding: 8px 16px;
+  background: rgba(255,255,255,0.15); color: #f6ecd6; cursor: pointer; border: none;
 }
-.ledger-add-btn:hover { background: rgba(255,255,255,0.4); }
+.ledger-add-btn:hover { background: rgba(255,255,255,0.3); }
 
 /* ---------- Self-bordered ink buttons (no printed art to match — these draw
    their own hand-drawn borders directly) ---------- */
 .ink-btn {
   font-family: var(--font-script); font-weight: 700; font-size: clamp(14px, 1.6vw, 18px);
   color: var(--ink-fixed); background: rgba(255,255,255,0.22); cursor: pointer;
-  border: none; border-radius: 4px; padding: 9px 22px;
+  border: none; border-radius: 4px; padding: 9px 22px; -webkit-text-stroke: 0.3px currentColor;
   transition: background 0.15s ease, transform 0.08s ease;
 }
 .ink-btn:hover { background: rgba(255,255,255,0.4); }
@@ -280,15 +284,15 @@ button:focus-visible, input:focus-visible, select:focus-visible, a:focus-visible
 .write-in { opacity: 0; animation: write-in 0.5s ease forwards; }
 
 .gen-label {
-  font-family: var(--font-body); font-size: clamp(8px, 1vw, 11px); letter-spacing: 0.1em; text-transform: uppercase;
+  font-family: var(--font-body); font-weight: 700; font-size: clamp(8px, 1vw, 11px); letter-spacing: 0.1em; text-transform: uppercase;
   color: var(--ink-fixed-soft); margin-bottom: 2px;
 }
 .gen-value {
   font-family: var(--font-mono); font-weight: 700; color: var(--ink-fixed); font-variant-numeric: tabular-nums;
   font-size: clamp(13px, 2vw, 22px);
 }
-.gen-value--script { font-family: var(--font-script); font-size: clamp(16px, 2.4vw, 26px); }
-.gen-sublabel { font-family: var(--font-mono); font-size: clamp(8px, 0.9vw, 10px); color: var(--ink-fixed-soft); margin-top: 1px; }
+.gen-value--script { font-family: var(--font-script); font-size: clamp(16px, 2.4vw, 26px); -webkit-text-stroke: 0.35px currentColor; }
+.gen-sublabel { font-family: var(--font-mono); font-weight: 700; font-size: clamp(8px, 0.9vw, 10px); color: var(--ink-fixed-soft); margin-top: 1px; }
 
 .gen-roll {
   left: 11%; top: 2.5%; width: 40%; height: 41%;
@@ -307,7 +311,7 @@ button:focus-visible, input:focus-visible, select:focus-visible, a:focus-visible
 
 .gen-name-box { left: 15.9%; top: 58.2%; width: 29.3%; height: 10.2%; }
 .gen-name-input {
-  font-family: var(--font-script); font-weight: 700; font-size: clamp(15px, 2vw, 22px);
+  font-family: var(--font-script); font-weight: 700; font-size: clamp(15px, 2vw, 22px); -webkit-text-stroke: 0.35px currentColor;
   background: transparent; border: none; color: var(--ink-fixed); text-align: center; padding: 0; width: 95%;
 }
 .gen-name-input::placeholder { color: rgba(44,32,19,0.35); font-weight: 400; }
@@ -326,10 +330,17 @@ button:focus-visible, input:focus-visible, select:focus-visible, a:focus-visible
 
 .gen-portrait {
   left: 51%; top: 4.2%; width: 23%; height: 37%;
-  opacity: 0; transition: opacity 0.7s ease; padding: 6%;
+  opacity: 0; transition: opacity 0.7s ease; padding: 3%; overflow: hidden;
 }
 .gen-portrait.show { opacity: 1; }
-.gen-portrait img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.gen-portrait.hand-border::after { border-radius: 4px; }
+/* The source sketches have a lot of built-in empty margin around the small
+   centered figure, so a straight object-fit:contain reads as tiny. Scaling
+   the image up and letting the padded, overflow:hidden frame crop it makes
+   the actual character 2-3x larger without needing to blow up the frame
+   itself (which has no room to grow before it collides with the HP/race/
+   class boxes next to it). */
+.gen-portrait img { width: 100%; height: 100%; object-fit: contain; display: block; transform: scale(2.6); transform-origin: 50% 42%; }
 
 .gen-hp-box { left: 74.4%; top: 26.6%; width: 12.3%; height: 13%; }
 
