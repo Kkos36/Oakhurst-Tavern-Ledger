@@ -1,0 +1,387 @@
+[
+  {
+    "race": "Human",
+    "class": "Barbarian",
+    "file": "human_barbarian.svg"
+  },
+  {
+    "race": "Human",
+    "class": "Bard",
+    "file": "human_bard.svg"
+  },
+  {
+    "race": "Human",
+    "class": "Cleric",
+    "file": "human_cleric.svg"
+  },
+  {
+    "race": "Human",
+    "class": "Druid",
+    "file": "human_druid.svg"
+  },
+  {
+    "race": "Human",
+    "class": "Fighter",
+    "file": "human_fighter.svg"
+  },
+  {
+    "race": "Human",
+    "class": "Monk",
+    "file": "human_monk.svg"
+  },
+  {
+    "race": "Human",
+    "class": "Paladin",
+    "file": "human_paladin.svg"
+  },
+  {
+    "race": "Human",
+    "class": "Ranger",
+    "file": "human_ranger.svg"
+  },
+  {
+    "race": "Human",
+    "class": "Rogue",
+    "file": "human_rogue.svg"
+  },
+  {
+    "race": "Human",
+    "class": "Sorcerer",
+    "file": "human_sorcerer.svg"
+  },
+  {
+    "race": "Human",
+    "class": "Wizard",
+    "file": "human_wizard.svg"
+  },
+  {
+    "race": "Dwarf",
+    "class": "Barbarian",
+    "file": "dwarf_barbarian.svg"
+  },
+  {
+    "race": "Dwarf",
+    "class": "Bard",
+    "file": "dwarf_bard.svg"
+  },
+  {
+    "race": "Dwarf",
+    "class": "Cleric",
+    "file": "dwarf_cleric.svg"
+  },
+  {
+    "race": "Dwarf",
+    "class": "Druid",
+    "file": "dwarf_druid.svg"
+  },
+  {
+    "race": "Dwarf",
+    "class": "Fighter",
+    "file": "dwarf_fighter.svg"
+  },
+  {
+    "race": "Dwarf",
+    "class": "Monk",
+    "file": "dwarf_monk.svg"
+  },
+  {
+    "race": "Dwarf",
+    "class": "Paladin",
+    "file": "dwarf_paladin.svg"
+  },
+  {
+    "race": "Dwarf",
+    "class": "Ranger",
+    "file": "dwarf_ranger.svg"
+  },
+  {
+    "race": "Dwarf",
+    "class": "Rogue",
+    "file": "dwarf_rogue.svg"
+  },
+  {
+    "race": "Dwarf",
+    "class": "Sorcerer",
+    "file": "dwarf_sorcerer.svg"
+  },
+  {
+    "race": "Dwarf",
+    "class": "Wizard",
+    "file": "dwarf_wizard.svg"
+  },
+  {
+    "race": "Elf",
+    "class": "Barbarian",
+    "file": "elf_barbarian.svg"
+  },
+  {
+    "race": "Elf",
+    "class": "Bard",
+    "file": "elf_bard.svg"
+  },
+  {
+    "race": "Elf",
+    "class": "Cleric",
+    "file": "elf_cleric.svg"
+  },
+  {
+    "race": "Elf",
+    "class": "Druid",
+    "file": "elf_druid.svg"
+  },
+  {
+    "race": "Elf",
+    "class": "Fighter",
+    "file": "elf_fighter.svg"
+  },
+  {
+    "race": "Elf",
+    "class": "Monk",
+    "file": "elf_monk.svg"
+  },
+  {
+    "race": "Elf",
+    "class": "Paladin",
+    "file": "elf_paladin.svg"
+  },
+  {
+    "race": "Elf",
+    "class": "Ranger",
+    "file": "elf_ranger.svg"
+  },
+  {
+    "race": "Elf",
+    "class": "Rogue",
+    "file": "elf_rogue.svg"
+  },
+  {
+    "race": "Elf",
+    "class": "Sorcerer",
+    "file": "elf_sorcerer.svg"
+  },
+  {
+    "race": "Elf",
+    "class": "Wizard",
+    "file": "elf_wizard.svg"
+  },
+  {
+    "race": "Gnome",
+    "class": "Barbarian",
+    "file": "gnome_barbarian.svg"
+  },
+  {
+    "race": "Gnome",
+    "class": "Bard",
+    "file": "gnome_bard.svg"
+  },
+  {
+    "race": "Gnome",
+    "class": "Cleric",
+    "file": "gnome_cleric.svg"
+  },
+  {
+    "race": "Gnome",
+    "class": "Druid",
+    "file": "gnome_druid.svg"
+  },
+  {
+    "race": "Gnome",
+    "class": "Fighter",
+    "file": "gnome_fighter.svg"
+  },
+  {
+    "race": "Gnome",
+    "class": "Monk",
+    "file": "gnome_monk.svg"
+  },
+  {
+    "race": "Gnome",
+    "class": "Paladin",
+    "file": "gnome_paladin.svg"
+  },
+  {
+    "race": "Gnome",
+    "class": "Ranger",
+    "file": "gnome_ranger.svg"
+  },
+  {
+    "race": "Gnome",
+    "class": "Rogue",
+    "file": "gnome_rogue.svg"
+  },
+  {
+    "race": "Gnome",
+    "class": "Sorcerer",
+    "file": "gnome_sorcerer.svg"
+  },
+  {
+    "race": "Gnome",
+    "class": "Wizard",
+    "file": "gnome_wizard.svg"
+  },
+  {
+    "race": "Half-Elf",
+    "class": "Barbarian",
+    "file": "half-elf_barbarian.svg"
+  },
+  {
+    "race": "Half-Elf",
+    "class": "Bard",
+    "file": "half-elf_bard.svg"
+  },
+  {
+    "race": "Half-Elf",
+    "class": "Cleric",
+    "file": "half-elf_cleric.svg"
+  },
+  {
+    "race": "Half-Elf",
+    "class": "Druid",
+    "file": "half-elf_druid.svg"
+  },
+  {
+    "race": "Half-Elf",
+    "class": "Fighter",
+    "file": "half-elf_fighter.svg"
+  },
+  {
+    "race": "Half-Elf",
+    "class": "Monk",
+    "file": "half-elf_monk.svg"
+  },
+  {
+    "race": "Half-Elf",
+    "class": "Paladin",
+    "file": "half-elf_paladin.svg"
+  },
+  {
+    "race": "Half-Elf",
+    "class": "Ranger",
+    "file": "half-elf_ranger.svg"
+  },
+  {
+    "race": "Half-Elf",
+    "class": "Rogue",
+    "file": "half-elf_rogue.svg"
+  },
+  {
+    "race": "Half-Elf",
+    "class": "Sorcerer",
+    "file": "half-elf_sorcerer.svg"
+  },
+  {
+    "race": "Half-Elf",
+    "class": "Wizard",
+    "file": "half-elf_wizard.svg"
+  },
+  {
+    "race": "Half-Orc",
+    "class": "Barbarian",
+    "file": "half-orc_barbarian.svg"
+  },
+  {
+    "race": "Half-Orc",
+    "class": "Bard",
+    "file": "half-orc_bard.svg"
+  },
+  {
+    "race": "Half-Orc",
+    "class": "Cleric",
+    "file": "half-orc_cleric.svg"
+  },
+  {
+    "race": "Half-Orc",
+    "class": "Druid",
+    "file": "half-orc_druid.svg"
+  },
+  {
+    "race": "Half-Orc",
+    "class": "Fighter",
+    "file": "half-orc_fighter.svg"
+  },
+  {
+    "race": "Half-Orc",
+    "class": "Monk",
+    "file": "half-orc_monk.svg"
+  },
+  {
+    "race": "Half-Orc",
+    "class": "Paladin",
+    "file": "half-orc_paladin.svg"
+  },
+  {
+    "race": "Half-Orc",
+    "class": "Ranger",
+    "file": "half-orc_ranger.svg"
+  },
+  {
+    "race": "Half-Orc",
+    "class": "Rogue",
+    "file": "half-orc_rogue.svg"
+  },
+  {
+    "race": "Half-Orc",
+    "class": "Sorcerer",
+    "file": "half-orc_sorcerer.svg"
+  },
+  {
+    "race": "Half-Orc",
+    "class": "Wizard",
+    "file": "half-orc_wizard.svg"
+  },
+  {
+    "race": "Halfling",
+    "class": "Barbarian",
+    "file": "halfling_barbarian.svg"
+  },
+  {
+    "race": "Halfling",
+    "class": "Bard",
+    "file": "halfling_bard.svg"
+  },
+  {
+    "race": "Halfling",
+    "class": "Cleric",
+    "file": "halfling_cleric.svg"
+  },
+  {
+    "race": "Halfling",
+    "class": "Druid",
+    "file": "halfling_druid.svg"
+  },
+  {
+    "race": "Halfling",
+    "class": "Fighter",
+    "file": "halfling_fighter.svg"
+  },
+  {
+    "race": "Halfling",
+    "class": "Monk",
+    "file": "halfling_monk.svg"
+  },
+  {
+    "race": "Halfling",
+    "class": "Paladin",
+    "file": "halfling_paladin.svg"
+  },
+  {
+    "race": "Halfling",
+    "class": "Ranger",
+    "file": "halfling_ranger.svg"
+  },
+  {
+    "race": "Halfling",
+    "class": "Rogue",
+    "file": "halfling_rogue.svg"
+  },
+  {
+    "race": "Halfling",
+    "class": "Sorcerer",
+    "file": "halfling_sorcerer.svg"
+  },
+  {
+    "race": "Halfling",
+    "class": "Wizard",
+    "file": "halfling_wizard.svg"
+  }
+]
