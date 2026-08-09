@@ -206,7 +206,14 @@ button:focus-visible, input:focus-visible, select:focus-visible, a:focus-visible
 }
 
 /* ---------- Spread: player selection (both pages) ---------- */
-.spread--player .spread-heading { position: absolute; left: 12%; top: 4%; width: 76%; }
+/* The heading and add-player form both straddle the book's darker center
+   gutter, where plain ink text loses contrast — each gets a soft banner
+   fill (faded at the edges) behind it to read cleanly regardless of what's
+   under it. */
+.spread--player .spread-heading {
+  position: absolute; left: 12%; top: 3.2%; width: 76%; padding: 10px 0 8px;
+  background: linear-gradient(90deg, transparent, rgba(122, 27, 27, 0.28) 18%, rgba(122, 27, 27, 0.28) 82%, transparent);
+}
 
 .ledger-list {
   position: absolute; left: 15%; top: 17%; width: 70%; height: 62%;
@@ -238,7 +245,9 @@ button:focus-visible, input:focus-visible, select:focus-visible, a:focus-visible
 .ledger-entry-remove:hover { opacity: 1; color: var(--danger); border-color: var(--danger); }
 
 .ledger-add-form {
-  position: absolute; left: 15%; top: 82%; width: 70%; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;
+  position: absolute; left: 15%; top: 80.5%; width: 70%; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;
+  align-items: center; padding: 14px 0;
+  background: linear-gradient(90deg, transparent, rgba(44, 32, 19, 0.22) 18%, rgba(44, 32, 19, 0.22) 82%, transparent);
 }
 .ledger-add-input {
   font-family: var(--font-script); font-size: clamp(15px,1.8vw,19px); padding: 6px 14px; border-radius: 3px;
@@ -287,7 +296,10 @@ button:focus-visible, input:focus-visible, select:focus-visible, a:focus-visible
   transition: filter 0.15s ease;
 }
 .gen-roll:hover, .gen-roll:focus-visible { filter: brightness(1.08); }
-.gen-roll-art { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; pointer-events: none; }
+.gen-roll-art {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; pointer-events: none;
+  filter: grayscale(1) sepia(0.55) brightness(1.05) contrast(0.92);
+}
 .gen-roll-hint {
   font-family: var(--font-script); font-weight: 700; color: var(--ink-fixed);
   font-size: clamp(13px, 1.7vw, 19px); position: relative; z-index: 1; line-height: 1.25; text-align: center;
@@ -313,8 +325,8 @@ button:focus-visible, input:focus-visible, select:focus-visible, a:focus-visible
 .gen-derived-item .gen-value { font-size: clamp(12px, 1.5vw, 16px); }
 
 .gen-portrait {
-  left: 52%; top: 5.1%; width: 21%; height: 34.5%;
-  opacity: 0; transition: opacity 0.7s ease; padding: 4%;
+  left: 51%; top: 4.2%; width: 23%; height: 37%;
+  opacity: 0; transition: opacity 0.7s ease; padding: 6%;
 }
 .gen-portrait.show { opacity: 1; }
 .gen-portrait img { width: 100%; height: 100%; object-fit: contain; display: block; }
