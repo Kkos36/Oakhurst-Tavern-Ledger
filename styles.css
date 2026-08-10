@@ -24,7 +24,7 @@
   --ink-fixed-soft: rgba(44, 32, 19, 0.6);
 
   --font-display: Georgia, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", serif;
-  --font-script: "MedievalSharp", "Segoe Script", var(--font-display);
+  --font-script: "Imperial Script", "Segoe Script", var(--font-display);
   --font-body: -apple-system, "Segoe UI", system-ui, "Helvetica Neue", sans-serif;
   --font-mono: ui-monospace, "Cascadia Mono", "SFMono-Regular", Consolas, "Liberation Mono", monospace;
 }
@@ -85,7 +85,7 @@ button:focus-visible, input:focus-visible, select:focus-visible, a:focus-visible
 /* ---------- Landing scene ---------- */
 .scene--landing { position: fixed; inset: 0; overflow: hidden; z-index: 1; }
 .scene--landing.on-top { z-index: 5; }
-.landing-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+.landing-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 100%; display: block; }
 .hotspots { position: absolute; inset: 0; width: 100%; height: 100%; }
 .hotspot {
   fill: rgba(255, 214, 140, 0.001);
@@ -161,7 +161,7 @@ button:focus-visible, input:focus-visible, select:focus-visible, a:focus-visible
 .scene--book { position: fixed; inset: 0; z-index: 2; overflow: hidden; background: var(--wood-2); }
 .scene--book[hidden] { display: none; }
 
-.book-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+.book-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; display: block; }
 
 .back-btn {
   position: absolute; top: 18px; left: 18px; z-index: 6;
@@ -172,10 +172,13 @@ button:focus-visible, input:focus-visible, select:focus-visible, a:focus-visible
 .back-btn:hover { background: rgba(20,14,6,0.75); }
 
 /* Overlay div is resized/positioned via JS to exactly match the book-bg image's
-   object-fit:cover crop rectangle (natural size 1672x941), so every field below
-   can be positioned with plain percentages regardless of viewport size — the
-   same trick the landing hotspots use via SVG viewBox slice, generalized for
-   real HTML form elements. */
+   object-fit:contain letterbox rectangle (natural size 1672x941), so every field
+   below can be positioned with plain percentages regardless of viewport size —
+   the same trick the landing hotspots use via SVG viewBox slice, generalized for
+   real HTML form elements. contain (not cover) is deliberate: it guarantees the
+   whole spread, including the header/footer controls near its top and bottom
+   edges, always stays fully on-screen instead of being cropped off by a short
+   viewport (e.g. a browser with a bookmarks bar). */
 .book-overlay { position: absolute; perspective: 2200px; }
 .spread { position: absolute; inset: 0; }
 .spread[hidden] { display: none; }
@@ -284,7 +287,7 @@ button:focus-visible, input:focus-visible, select:focus-visible, a:focus-visible
 .write-in { opacity: 0; animation: write-in 0.5s ease forwards; }
 
 .gen-label {
-  font-family: var(--font-body); font-weight: 700; font-size: clamp(8px, 1vw, 11px); letter-spacing: 0.1em; text-transform: uppercase;
+  font-family: var(--font-script); font-weight: 700; font-size: clamp(12px, 1.5vw, 16px); letter-spacing: 0.02em;
   color: var(--ink-fixed-soft); margin-bottom: 2px;
 }
 .gen-value {
@@ -295,7 +298,7 @@ button:focus-visible, input:focus-visible, select:focus-visible, a:focus-visible
 .gen-sublabel { font-family: var(--font-mono); font-weight: 700; font-size: clamp(8px, 0.9vw, 10px); color: var(--ink-fixed-soft); margin-top: 1px; }
 
 .gen-roll {
-  left: 11%; top: 2.5%; width: 40%; height: 41%;
+  left: 18%; top: 9.5%; width: 26%; height: 26.6%;
   background: transparent; border: none; cursor: pointer;
   transition: filter 0.15s ease;
 }
@@ -329,7 +332,7 @@ button:focus-visible, input:focus-visible, select:focus-visible, a:focus-visible
 .gen-derived-item .gen-value { font-size: clamp(12px, 1.5vw, 16px); }
 
 .gen-portrait {
-  left: 51%; top: 4.2%; width: 23%; height: 37%;
+  left: 53.3%; top: 7.9%; width: 18.4%; height: 29.6%;
   opacity: 0; transition: opacity 0.7s ease; padding: 3%; overflow: hidden;
 }
 .gen-portrait.show { opacity: 1; }

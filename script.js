@@ -250,7 +250,7 @@
 
   function layoutBookOverlay() {
     var vw = window.innerWidth, vh = window.innerHeight;
-    var scale = Math.max(vw / BOOK_NAT_W, vh / BOOK_NAT_H);
+    var scale = Math.min(vw / BOOK_NAT_W, vh / BOOK_NAT_H);
     var dispW = BOOK_NAT_W * scale, dispH = BOOK_NAT_H * scale;
     var offX = (vw - dispW) / 2, offY = (vh - dispH) / 2;
     bookOverlay.style.left = offX + "px";
