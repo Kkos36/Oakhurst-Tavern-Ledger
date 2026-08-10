@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Jacquard+24&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Kings&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="styles.css" />
 <title>The Tavern Ledger — Oakhurst West Marches</title>
 </head>
@@ -108,12 +108,22 @@
           <span class="gen-value gen-value--script" id="classField"></span>
         </div>
 
-        <div class="gen-field gen-stat gen-str hand-border"><span class="gen-label">Str</span><span class="gen-value" id="statStr"></span></div>
-        <div class="gen-field gen-stat gen-dex hand-border hand-border--b"><span class="gen-label">Dex</span><span class="gen-value" id="statDex"></span></div>
-        <div class="gen-field gen-stat gen-con hand-border hand-border--c"><span class="gen-label">Con</span><span class="gen-value" id="statCon"></span></div>
-        <div class="gen-field gen-stat gen-stat--sm gen-int hand-border hand-border--b"><span class="gen-label">Int</span><span class="gen-value" id="statInt"></span></div>
-        <div class="gen-field gen-stat gen-stat--sm gen-wis hand-border hand-border--c"><span class="gen-label">Wis</span><span class="gen-value" id="statWis"></span></div>
-        <div class="gen-field gen-stat gen-stat--sm gen-cha hand-border"><span class="gen-label">Cha</span><span class="gen-value" id="statCha"></span></div>
+        <div class="gen-field gen-abilities hand-border" id="abilityBlock">
+          <svg class="corner-flourish corner-flourish--tl" viewBox="0 0 24 24" aria-hidden="true"><path d="M1,19 L1,15 Q1,1 15,1 L19,1" /></svg>
+          <svg class="corner-flourish corner-flourish--tr" viewBox="0 0 24 24" aria-hidden="true"><path d="M1,19 L1,15 Q1,1 15,1 L19,1" /></svg>
+          <svg class="corner-flourish corner-flourish--bl" viewBox="0 0 24 24" aria-hidden="true"><path d="M1,19 L1,15 Q1,1 15,1 L19,1" /></svg>
+          <svg class="corner-flourish corner-flourish--br" viewBox="0 0 24 24" aria-hidden="true"><path d="M1,19 L1,15 Q1,1 15,1 L19,1" /></svg>
+          <p class="gen-abilities-title">Ability Scores</p>
+          <div class="gen-abilities-rule" aria-hidden="true"></div>
+          <div class="gen-abilities-row">
+            <div class="gen-ability"><span class="gen-label">Str</span><span class="gen-value" id="statStr"></span></div>
+            <div class="gen-ability"><span class="gen-label">Dex</span><span class="gen-value" id="statDex"></span></div>
+            <div class="gen-ability"><span class="gen-label">Con</span><span class="gen-value" id="statCon"></span></div>
+            <div class="gen-ability"><span class="gen-label">Int</span><span class="gen-value" id="statInt"></span></div>
+            <div class="gen-ability"><span class="gen-label">Wis</span><span class="gen-value" id="statWis"></span></div>
+            <div class="gen-ability"><span class="gen-label">Cha</span><span class="gen-value" id="statCha"></span></div>
+          </div>
+        </div>
       </div>
     </div>
 
