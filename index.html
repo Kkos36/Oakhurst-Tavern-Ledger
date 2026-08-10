@@ -6,7 +6,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Kings&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="css/styles.css" />
 <title>The Tavern Ledger — Oakhurst West Marches</title>
 </head>
 <body>
@@ -33,12 +33,7 @@
 
   <section class="scene scene--landing" id="landing">
     <img class="landing-img" id="landingImg" src="docs/AI_Artwork/LandingPage.png" alt="The Oakhurst tavern: a bartender behind the counter and an open book on the bar" />
-    <svg class="hotspots" viewBox="0 0 1536 1024" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
-      <polygon id="hotspotBartender" class="hotspot" role="button" tabindex="0" aria-label="Ask the bartender about the rules"
-        points="742,93 661,100 613,200 598,316 597,432 609,538 637,643 911,643 900,538 921,432 908,316 872,200 819,100"></polygon>
-      <polygon id="hotspotBook" class="hotspot" role="button" tabindex="0" aria-label="Open the ledger to roll a character"
-        points="411,662 548,648 742,640 979,653 1084,689 1074,863 1042,940 442,940 369,875 347,717"></polygon>
-    </svg>
+    <svg class="hotspots" id="landingHotspots" viewBox="0 0 1536 1024" preserveAspectRatio="xMidYMid meet" aria-hidden="true"></svg>
     <div class="hotspot-label" id="hotspotLabel"></div>
     <p class="landing-caption">Ask the barkeep about the rules, or open the ledger to roll up an adventurer.</p>
   </section>
@@ -82,10 +77,10 @@
         </div>
 
         <div class="gen-field gen-combat manuscript-frame hand-border" id="derivedBlock">
-          <svg class="corner-flourish corner-flourish--tl" viewBox="0 0 24 24" aria-hidden="true"><path d="M1,19 L1,15 Q1,1 15,1 L19,1" /></svg>
-          <svg class="corner-flourish corner-flourish--tr" viewBox="0 0 24 24" aria-hidden="true"><path d="M1,19 L1,15 Q1,1 15,1 L19,1" /></svg>
-          <svg class="corner-flourish corner-flourish--bl" viewBox="0 0 24 24" aria-hidden="true"><path d="M1,19 L1,15 Q1,1 15,1 L19,1" /></svg>
-          <svg class="corner-flourish corner-flourish--br" viewBox="0 0 24 24" aria-hidden="true"><path d="M1,19 L1,15 Q1,1 15,1 L19,1" /></svg>
+          <img class="corner-flourish corner-flourish--tl" src="docs/AI_Artwork/dnd_quill_ornaments/corner-flourish.webp" alt="" aria-hidden="true" />
+          <img class="corner-flourish corner-flourish--tr" src="docs/AI_Artwork/dnd_quill_ornaments/corner-flourish.webp" alt="" aria-hidden="true" />
+          <img class="corner-flourish corner-flourish--bl" src="docs/AI_Artwork/dnd_quill_ornaments/corner-flourish.webp" alt="" aria-hidden="true" />
+          <img class="corner-flourish corner-flourish--br" src="docs/AI_Artwork/dnd_quill_ornaments/corner-flourish.webp" alt="" aria-hidden="true" />
           <p class="gen-manuscript-title">Combat Statistics</p>
           <div class="gen-manuscript-rule" aria-hidden="true"></div>
           <div class="gen-manuscript-row">
@@ -99,12 +94,8 @@
           </div>
         </div>
 
-        <div class="gen-field gen-portrait manuscript-frame hand-border" id="portraitFrame">
+        <div class="gen-field gen-portrait" id="portraitFrame">
           <img id="portraitImg" alt="" />
-          <svg class="corner-flourish corner-flourish--tl" viewBox="0 0 24 24" aria-hidden="true"><path d="M1,19 L1,15 Q1,1 15,1 L19,1" /></svg>
-          <svg class="corner-flourish corner-flourish--tr" viewBox="0 0 24 24" aria-hidden="true"><path d="M1,19 L1,15 Q1,1 15,1 L19,1" /></svg>
-          <svg class="corner-flourish corner-flourish--bl" viewBox="0 0 24 24" aria-hidden="true"><path d="M1,19 L1,15 Q1,1 15,1 L19,1" /></svg>
-          <svg class="corner-flourish corner-flourish--br" viewBox="0 0 24 24" aria-hidden="true"><path d="M1,19 L1,15 Q1,1 15,1 L19,1" /></svg>
         </div>
 
         <div class="gen-field gen-hp-box">
@@ -119,10 +110,10 @@
         </div>
 
         <div class="gen-field gen-abilities manuscript-frame hand-border" id="abilityBlock">
-          <svg class="corner-flourish corner-flourish--tl" viewBox="0 0 24 24" aria-hidden="true"><path d="M1,19 L1,15 Q1,1 15,1 L19,1" /></svg>
-          <svg class="corner-flourish corner-flourish--tr" viewBox="0 0 24 24" aria-hidden="true"><path d="M1,19 L1,15 Q1,1 15,1 L19,1" /></svg>
-          <svg class="corner-flourish corner-flourish--bl" viewBox="0 0 24 24" aria-hidden="true"><path d="M1,19 L1,15 Q1,1 15,1 L19,1" /></svg>
-          <svg class="corner-flourish corner-flourish--br" viewBox="0 0 24 24" aria-hidden="true"><path d="M1,19 L1,15 Q1,1 15,1 L19,1" /></svg>
+          <img class="corner-flourish corner-flourish--tl" src="docs/AI_Artwork/dnd_quill_ornaments/corner-flourish.webp" alt="" aria-hidden="true" />
+          <img class="corner-flourish corner-flourish--tr" src="docs/AI_Artwork/dnd_quill_ornaments/corner-flourish.webp" alt="" aria-hidden="true" />
+          <img class="corner-flourish corner-flourish--bl" src="docs/AI_Artwork/dnd_quill_ornaments/corner-flourish.webp" alt="" aria-hidden="true" />
+          <img class="corner-flourish corner-flourish--br" src="docs/AI_Artwork/dnd_quill_ornaments/corner-flourish.webp" alt="" aria-hidden="true" />
           <p class="gen-manuscript-title">Ability Scores</p>
           <div class="gen-manuscript-rule" aria-hidden="true"></div>
           <div class="gen-manuscript-row">
@@ -153,6 +144,6 @@
     </div>
   </section>
 
-  <script src="script.js"></script>
+  <script type="module" src="js/main.js"></script>
 </body>
 </html>
