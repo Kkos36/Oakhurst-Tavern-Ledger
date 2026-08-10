@@ -72,56 +72,66 @@
 
       <div class="spread spread--generate" id="spreadGenerate" hidden>
         <button class="gen-field gen-roll" id="rollBtn" type="button" aria-label="Click to roll your fate">
-          <img class="gen-roll-art" src="docs/AI_Artwork/StylizedD20.png?v=2" alt="" />
+          <img class="gen-roll-art" src="docs/AI_Artwork/StylizedD20.png?v=3" alt="" />
           <span class="gen-roll-hint">Click to roll<br />your fate</span>
         </button>
 
-        <div class="gen-field gen-name-box hand-border">
+        <div class="gen-field gen-name-box">
           <span class="gen-label">Adventurer Name</span>
           <input class="gen-value gen-value--script gen-name-input" id="nameInput" type="text" placeholder="&hellip;" maxlength="60" />
         </div>
 
-        <div class="gen-field gen-derived" id="derivedBlock">
-          <div class="gen-derived-item hand-border hand-border--b"><span class="gen-label">AC</span><span class="gen-value" id="derivedAc"></span></div>
-          <div class="gen-derived-item hand-border hand-border--c"><span class="gen-label">Init</span><span class="gen-value" id="derivedInit"></span></div>
-          <div class="gen-derived-item hand-border"><span class="gen-label">Speed</span><span class="gen-value" id="derivedSpeed"></span></div>
-          <div class="gen-derived-item hand-border hand-border--b"><span class="gen-label">BAB</span><span class="gen-value" id="derivedBab"></span></div>
-          <div class="gen-derived-item hand-border hand-border--c"><span class="gen-label">Fort</span><span class="gen-value" id="derivedFort"></span></div>
-          <div class="gen-derived-item hand-border"><span class="gen-label">Ref</span><span class="gen-value" id="derivedRef"></span></div>
-          <div class="gen-derived-item hand-border hand-border--b"><span class="gen-label">Will</span><span class="gen-value" id="derivedWill"></span></div>
+        <div class="gen-field gen-combat manuscript-frame hand-border" id="derivedBlock">
+          <svg class="corner-flourish corner-flourish--tl" viewBox="0 0 24 24" aria-hidden="true"><path d="M1,19 L1,15 Q1,1 15,1 L19,1" /></svg>
+          <svg class="corner-flourish corner-flourish--tr" viewBox="0 0 24 24" aria-hidden="true"><path d="M1,19 L1,15 Q1,1 15,1 L19,1" /></svg>
+          <svg class="corner-flourish corner-flourish--bl" viewBox="0 0 24 24" aria-hidden="true"><path d="M1,19 L1,15 Q1,1 15,1 L19,1" /></svg>
+          <svg class="corner-flourish corner-flourish--br" viewBox="0 0 24 24" aria-hidden="true"><path d="M1,19 L1,15 Q1,1 15,1 L19,1" /></svg>
+          <p class="gen-manuscript-title">Combat Statistics</p>
+          <div class="gen-manuscript-rule" aria-hidden="true"></div>
+          <div class="gen-manuscript-row">
+            <div class="gen-manuscript-item"><span class="gen-label">AC</span><span class="gen-value" id="derivedAc"></span></div>
+            <div class="gen-manuscript-item"><span class="gen-label">Init</span><span class="gen-value" id="derivedInit"></span></div>
+            <div class="gen-manuscript-item"><span class="gen-label">Speed</span><span class="gen-value" id="derivedSpeed"></span></div>
+            <div class="gen-manuscript-item"><span class="gen-label">BAB</span><span class="gen-value" id="derivedBab"></span></div>
+            <div class="gen-manuscript-item"><span class="gen-label">Fort</span><span class="gen-value" id="derivedFort"></span></div>
+            <div class="gen-manuscript-item"><span class="gen-label">Ref</span><span class="gen-value" id="derivedRef"></span></div>
+            <div class="gen-manuscript-item"><span class="gen-label">Will</span><span class="gen-value" id="derivedWill"></span></div>
+          </div>
         </div>
 
-        <div class="gen-field gen-portrait hand-border hand-border--c" id="portraitFrame"><img id="portraitImg" alt="" /></div>
+        <div class="gen-field gen-portrait manuscript-frame hand-border" id="portraitFrame">
+          <img id="portraitImg" alt="" />
+          <svg class="corner-flourish corner-flourish--tl" viewBox="0 0 24 24" aria-hidden="true"><path d="M1,19 L1,15 Q1,1 15,1 L19,1" /></svg>
+          <svg class="corner-flourish corner-flourish--tr" viewBox="0 0 24 24" aria-hidden="true"><path d="M1,19 L1,15 Q1,1 15,1 L19,1" /></svg>
+          <svg class="corner-flourish corner-flourish--bl" viewBox="0 0 24 24" aria-hidden="true"><path d="M1,19 L1,15 Q1,1 15,1 L19,1" /></svg>
+          <svg class="corner-flourish corner-flourish--br" viewBox="0 0 24 24" aria-hidden="true"><path d="M1,19 L1,15 Q1,1 15,1 L19,1" /></svg>
+        </div>
 
-        <div class="gen-field gen-hp-box hand-border hand-border--c">
+        <div class="gen-field gen-hp-box">
           <span class="gen-label">HP</span>
           <span class="gen-value" id="hpField"></span>
           <span class="gen-sublabel" id="hdField"></span>
         </div>
 
-        <div class="gen-field gen-race-box hand-border">
-          <span class="gen-label">Race</span>
-          <span class="gen-value gen-value--script" id="raceField"></span>
-        </div>
-        <div class="gen-field gen-class-box hand-border hand-border--b">
-          <span class="gen-label">Class</span>
-          <span class="gen-value gen-value--script" id="classField"></span>
+        <div class="gen-field gen-identity gen-manuscript-row" id="identityBlock">
+          <div class="gen-manuscript-item"><span class="gen-label">Race</span><span class="gen-value gen-value--script" id="raceField"></span></div>
+          <div class="gen-manuscript-item"><span class="gen-label">Class</span><span class="gen-value gen-value--script" id="classField"></span></div>
         </div>
 
-        <div class="gen-field gen-abilities hand-border" id="abilityBlock">
+        <div class="gen-field gen-abilities manuscript-frame hand-border" id="abilityBlock">
           <svg class="corner-flourish corner-flourish--tl" viewBox="0 0 24 24" aria-hidden="true"><path d="M1,19 L1,15 Q1,1 15,1 L19,1" /></svg>
           <svg class="corner-flourish corner-flourish--tr" viewBox="0 0 24 24" aria-hidden="true"><path d="M1,19 L1,15 Q1,1 15,1 L19,1" /></svg>
           <svg class="corner-flourish corner-flourish--bl" viewBox="0 0 24 24" aria-hidden="true"><path d="M1,19 L1,15 Q1,1 15,1 L19,1" /></svg>
           <svg class="corner-flourish corner-flourish--br" viewBox="0 0 24 24" aria-hidden="true"><path d="M1,19 L1,15 Q1,1 15,1 L19,1" /></svg>
-          <p class="gen-abilities-title">Ability Scores</p>
-          <div class="gen-abilities-rule" aria-hidden="true"></div>
-          <div class="gen-abilities-row">
-            <div class="gen-ability"><span class="gen-label">Str</span><span class="gen-value" id="statStr"></span></div>
-            <div class="gen-ability"><span class="gen-label">Dex</span><span class="gen-value" id="statDex"></span></div>
-            <div class="gen-ability"><span class="gen-label">Con</span><span class="gen-value" id="statCon"></span></div>
-            <div class="gen-ability"><span class="gen-label">Int</span><span class="gen-value" id="statInt"></span></div>
-            <div class="gen-ability"><span class="gen-label">Wis</span><span class="gen-value" id="statWis"></span></div>
-            <div class="gen-ability"><span class="gen-label">Cha</span><span class="gen-value" id="statCha"></span></div>
+          <p class="gen-manuscript-title">Ability Scores</p>
+          <div class="gen-manuscript-rule" aria-hidden="true"></div>
+          <div class="gen-manuscript-row">
+            <div class="gen-manuscript-item"><span class="gen-label">Str</span><span class="gen-value" id="statStr"></span></div>
+            <div class="gen-manuscript-item"><span class="gen-label">Dex</span><span class="gen-value" id="statDex"></span></div>
+            <div class="gen-manuscript-item"><span class="gen-label">Con</span><span class="gen-value" id="statCon"></span></div>
+            <div class="gen-manuscript-item"><span class="gen-label">Int</span><span class="gen-value" id="statInt"></span></div>
+            <div class="gen-manuscript-item"><span class="gen-label">Wis</span><span class="gen-value" id="statWis"></span></div>
+            <div class="gen-manuscript-item"><span class="gen-label">Cha</span><span class="gen-value" id="statCha"></span></div>
           </div>
         </div>
       </div>

@@ -312,31 +312,71 @@ button:focus-visible, input:focus-visible, select:focus-visible, a:focus-visible
   font-size: clamp(13px, 1.7vw, 19px); position: relative; z-index: 1; line-height: 1.25; text-align: center;
 }
 
+/* Adventurer name reads as a fill-in-the-blank line on the page (classic
+   "Name: ____" convention) instead of a boxed input. */
 .gen-name-box { left: 15.9%; top: 58.2%; width: 29.3%; height: 10.2%; }
 .gen-name-input {
   font-family: var(--font-script); font-weight: 700; font-size: clamp(15px, 2vw, 22px); -webkit-text-stroke: 0.35px currentColor;
-  background: transparent; border: none; color: var(--ink-fixed); text-align: center; padding: 0; width: 95%;
+  background: transparent; border: none; border-bottom: 1.4px solid rgba(44, 32, 19, 0.45);
+  color: var(--ink-fixed); text-align: center; padding: 0 0 4px; width: 85%;
 }
 .gen-name-input::placeholder { color: rgba(44,32,19,0.35); font-weight: 400; }
 .gen-name-input:focus { outline: none; }
 
-.gen-derived {
-  left: 15.9%; top: 71.5%; width: 68%; display: flex; flex-flow: row wrap; gap: 8px 10px; justify-content: flex-start;
-  align-items: flex-start; height: auto;
+/* ---------- Shared "manuscript section" building blocks. Used anywhere a
+   cluster of related values (ability scores, combat stats) needs to read as
+   ONE cohesive part of the page rather than a set of separate cards: a
+   single hand-inked frame (the shared .hand-border wobble outline plus a
+   straight inset rule, for the "double-ruled" look common on old character
+   sheets/manuscript pages) with small restrained corner flourishes, framing
+   values that sit unboxed inside, separated only by thin ink divider lines.
+   .manuscript-frame supplies the frame; .gen-manuscript-title/-rule/-row/
+   -item lay out what's inside it. Also reused, frame-only, on the portrait. */
+.manuscript-frame.hand-border::after { border-radius: 2px; }
+.manuscript-frame.hand-border::before {
+  content: ""; position: absolute; inset: 7px; border: 1px solid rgba(44, 32, 19, 0.32);
+  pointer-events: none;
 }
-.gen-derived-item {
-  padding: 5px 9px; min-width: 46px;
-  display: flex; flex-direction: column; align-items: center; background: rgba(255,255,255,0.12);
+.gen-manuscript-title {
+  margin: 0 0 6px; text-align: center; font-family: var(--font-script); font-weight: 700;
+  font-size: clamp(11px, 1.3vw, 14px); letter-spacing: 0.06em; color: var(--ink-fixed-soft);
 }
-.gen-derived-item .gen-label { margin-bottom: 0; }
-.gen-derived-item .gen-value { font-size: clamp(12px, 1.5vw, 16px); }
+.gen-manuscript-rule {
+  height: 1px; width: 78%; margin: 0 auto 4%;
+  background: linear-gradient(90deg, transparent, rgba(44, 32, 19, 0.4) 12%, rgba(44, 32, 19, 0.4) 88%, transparent);
+}
+.gen-manuscript-row { flex: 1; display: flex; align-items: stretch; justify-content: space-between; }
+.gen-manuscript-item {
+  flex: 1; position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center;
+}
+.gen-manuscript-item + .gen-manuscript-item::before {
+  content: ""; position: absolute; left: 0; top: 12%; bottom: 12%; width: 1px; background: rgba(44, 32, 19, 0.3);
+}
+.gen-manuscript-item .gen-label { margin-bottom: 3px; }
+.gen-manuscript-item .gen-value { font-size: clamp(15px, 2vw, 22px); }
+
+.corner-flourish {
+  position: absolute; width: 17px; height: 17px; fill: none; stroke: var(--ink-fixed);
+  stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; opacity: 0.7; pointer-events: none;
+}
+.corner-flourish--tl { top: 11px; left: 11px; }
+.corner-flourish--tr { top: 11px; right: 11px; transform: scaleX(-1); }
+.corner-flourish--bl { bottom: 11px; left: 11px; transform: scaleY(-1); }
+.corner-flourish--br { bottom: 11px; right: 11px; transform: scale(-1, -1); }
+
+/* ---------- Combat statistics: AC/Init/Speed/BAB/Fort/Ref/Will, one
+   manuscript section (see above) instead of seven separate pills. */
+.gen-combat {
+  left: 11%; top: 71%; width: 39%; height: 17%;
+  flex-direction: column; align-items: stretch; justify-content: center;
+  padding: 10px 4%;
+}
 
 .gen-portrait {
   left: 53.3%; top: 7.9%; width: 18.4%; height: 29.6%;
   opacity: 0; transition: opacity 0.7s ease; padding: 3%; overflow: hidden;
 }
 .gen-portrait.show { opacity: 1; }
-.gen-portrait.hand-border::after { border-radius: 4px; }
 /* The source sketches have a lot of built-in empty margin around the small
    centered figure, so a straight object-fit:contain reads as tiny. Scaling
    the image up and letting the padded, overflow:hidden frame crop it makes
@@ -347,46 +387,24 @@ button:focus-visible, input:focus-visible, select:focus-visible, a:focus-visible
 
 .gen-hp-box { left: 74.4%; top: 26.6%; width: 12.3%; height: 13%; }
 
-.gen-race-box { left: 52%; top: 42%; width: 17.5%; height: 10.3%; }
-.gen-class-box { left: 69.5%; top: 42%; width: 17.5%; height: 10.3%; }
+/* Race and Class: plain unboxed text, one thin ink divider between them -
+   no frame of their own, matching a physical sheet where a lone two-field
+   answer line doesn't need its own bordered card. */
+.gen-identity { left: 52%; top: 42%; width: 35.2%; height: 10.3%; }
+.gen-identity .gen-value--script { font-size: clamp(16px, 2.4vw, 26px); }
 select.gen-choice {
   font: inherit; font-family: var(--font-script); font-weight: 700; width: 92%;
-  background: rgba(255,255,255,0.5); border: 1px solid rgba(44,32,19,0.3); border-radius: 2px; color: var(--ink-fixed); text-align: center;
+  background: transparent; border: none; border-bottom: 1px solid rgba(44,32,19,0.3); color: var(--ink-fixed); text-align: center;
 }
 
-/* ---------- Ability scores: one bordered section, not six separate cards.
-   The border is a single hand-inked frame (the shared .hand-border wobble
-   outline plus a straight inset rule, for the "double-ruled" look common
-   on old character sheets/manuscript pages) with small restrained corner
-   flourishes; the six scores inside sit unboxed, separated only by thin
-   ink divider lines. */
+/* ---------- Ability scores: one manuscript section (see above) instead of
+   six separate cards. */
 .gen-abilities {
   left: 52%; top: 57%; width: 35.2%; height: 19%;
   flex-direction: column; align-items: stretch; justify-content: center;
   padding: 12px 6%;
 }
-.gen-abilities.hand-border::after { border-radius: 2px; }
-.gen-abilities.hand-border::before {
-  content: ""; position: absolute; inset: 7px; border: 1px solid rgba(44, 32, 19, 0.32);
-  pointer-events: none;
-}
-.gen-abilities-title {
-  margin: 0 0 6px; text-align: center; font-family: var(--font-script); font-weight: 700;
-  font-size: clamp(11px, 1.3vw, 14px); letter-spacing: 0.06em; color: var(--ink-fixed-soft);
-}
-.gen-abilities-rule {
-  height: 1px; width: 78%; margin: 0 auto 4%;
-  background: linear-gradient(90deg, transparent, rgba(44, 32, 19, 0.4) 12%, rgba(44, 32, 19, 0.4) 88%, transparent);
-}
-.gen-abilities-row { flex: 1; display: flex; align-items: stretch; justify-content: space-between; }
-.gen-ability {
-  flex: 1; position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center;
-}
-.gen-ability + .gen-ability::before {
-  content: ""; position: absolute; left: 0; top: 12%; bottom: 12%; width: 1px; background: rgba(44, 32, 19, 0.3);
-}
-.gen-ability .gen-label { margin-bottom: 3px; }
-.gen-ability .gen-value { font-size: clamp(17px, 2.6vw, 27px); }
+.gen-abilities .gen-manuscript-item .gen-value { font-size: clamp(17px, 2.6vw, 27px); }
 
 .corner-flourish {
   position: absolute; width: 17px; height: 17px; fill: none; stroke: var(--ink-fixed);
