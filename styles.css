@@ -23,10 +23,10 @@
   --ink-fixed: #2c2013;
   --ink-fixed-soft: rgba(44, 32, 19, 0.6);
 
-  --font-display: Georgia, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", serif;
-  --font-script: "Imperial Script", "Segoe Script", var(--font-display);
-  --font-body: -apple-system, "Segoe UI", system-ui, "Helvetica Neue", sans-serif;
-  --font-mono: ui-monospace, "Cascadia Mono", "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --font-display: "Jacquard 24", Georgia, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", serif;
+  --font-script: "Jacquard 24", "Segoe Script", var(--font-display);
+  --font-body: "Jacquard 24", -apple-system, "Segoe UI", system-ui, "Helvetica Neue", sans-serif;
+  --font-mono: "Jacquard 24", ui-monospace, "Cascadia Mono", "SFMono-Regular", Consolas, "Liberation Mono", monospace;
 }
 
 @media (prefers-color-scheme: dark) {
